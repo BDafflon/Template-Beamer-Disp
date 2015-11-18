@@ -1,0 +1,241 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Disp presentation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{beamer}
+\usepackage{tikz}
+\usepackage{setspace}
+\usepackage[english]{babel}
+\usepackage{verbatim}
+\usepackage[utf8x]{inputenc}
+
+
+
+ \setbeamertemplate{footline}[text line]{%
+  \parbox{\linewidth}{\vspace*{-8pt}\insertshorttitle \hfill\insertshortauthor\hfill\insertpagenumber}}
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Logo condition
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+\logo{\ifplacelogo\tikz [remember picture,overlay] \node at ([xshift=0cm, yshift=3.8cm]current page.center)  {\includegraphics[width=12cm]{logo/disp.png}};\fi} % replace with your own command
+
+\addtobeamertemplate{frametitle}{\vspace{0.5cm} \hspace*{5cm}}{}
+\placelogofalse
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Title Setting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Modèle latex pour le DISP]{\hspace{2cm} Modèle de présentation latex / beamer pour le laboratoire DISP}
+\author{\vspace{-0.5cm} Baudouin Dafflon}
+\institute{\vspace{-0.5cm} DISP - Université Lyon 1}
+\date{\vspace{-1cm} \date{}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+ 
+
+
+\begin{frame}[plain]
+   \tikz [remember picture,overlay]
+    \node at
+        ([xshift=-4.5cm, yshift=1cm]current page.south) 
+        %or: (current page.center)
+        {\includegraphics[width=2cm]{logo/insa.png}};
+    \tikz [remember picture,overlay]
+    \node at
+        ([xshift=-1.2cm, yshift=1cm]current page.south) 
+        %or: (current page.center)
+        {\includegraphics[width=3cm]{logo/lyon1.jpg}};
+    \tikz [remember picture,overlay]
+    \node at
+        ([xshift=2cm, yshift=1cm]current page.south) 
+        %or: (current page.center)
+        {\includegraphics[width=1cm]{logo/lyon2.png}};
+    \tikz [remember picture,overlay]
+    \node at
+        ([xshift=4.6cm, yshift=1cm]current page.south) 
+        %or: (current page.center)
+        {\includegraphics[width=1.8cm]{logo/lyon.jpeg}};
+    \tikz [remember picture,overlay]
+    \node at
+        ([xshift=0cm,yshift=1cm]current page.center) 
+        %or: (current page.center)
+        {\includegraphics[width=12cm]{logo/disp.png}};
+
+   \titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												End Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Plan 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\placelogotrue
+
+\section*{Sommaire}
+\begin{frame}{Sommaire}
+  \tableofcontents
+\end{frame}      
+% ----------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Slide
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+\begin{frame}{SLIDE title}
+
+\begin{block}{itemize}
+\begin{itemize}
+  \item Your introduction goes here!
+  \item Use \texttt{itemize} to organize your main points.
+\end{itemize}
+\end{block}
+ 
+\begin{block}{Examples}
+Some examples of commonly used commands and features are included, to help you get started.
+\end{block}
+
+\end{frame}
+
+ 
+\begin{frame}{SLIDE title}
+
+\begin{block}{itemize}
+\begin{itemize}
+  \item Your introduction goes here!
+  \item Use \texttt{itemize} to organize your main points \cite{Johnson}.
+\end{itemize}
+\end{block}
+ 
+\begin{block}{Examples}
+Some examples of commonly used commands and features are included, to help you get started.
+\end{block}
+
+\end{frame}
+
+
+\section{Part2}
+
+\begin{frame}{SLIDE title 2}
+ 
+\begin{columns}[t]
+  \begin{column}{5cm}
+  \begin{block}{Colonne 1}
+    Texte dans la\\
+    colonne 1.
+  \end{block} 
+  \end{column}
+  
+  \begin{column}{5cm}
+  \begin{block}{Colonne 2}
+    Texte dans la\\
+    colonne 2 qui peut être \cite{Zoran} \\
+    plus long que dans la \\
+    colonne 1.
+  \end{block}   
+  \end{column}
+ \end{columns}  
+\end{frame}
+ 
+
+\section{Part3}
+
+
+\begin{frame}{SLIDE title 3}
+  
+\end{frame}
+
+\begin{frame}{SLIDE title 4}
+  
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Bibliographie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Bibliographie}
+
+\begin{frame}{Bibliographie}
+
+ 
+		\bibliographystyle{abbrv}
+        \bibliography{bib/mybib}
+ 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\placelogofalse
+ 
+
+
+\begin{frame}[plain]
+   \tikz [remember picture,overlay]
+    \node at
+        ([xshift=-4.5cm, yshift=1cm]current page.south) 
+        %or: (current page.center)
+        {\includegraphics[width=2cm]{logo/insa.png}};
+    \tikz [remember picture,overlay]
+    \node at
+        ([xshift=-1.2cm, yshift=1cm]current page.south) 
+        %or: (current page.center)
+        {\includegraphics[width=3cm]{logo/lyon1.jpg}};
+    \tikz [remember picture,overlay]
+    \node at
+        ([xshift=2.2cm, yshift=1cm]current page.south) 
+        %or: (current page.center)
+        {\includegraphics[width=1cm]{logo/lyon2.png}};
+    \tikz [remember picture,overlay]
+    \node at
+        ([xshift=4.6cm, yshift=1cm]current page.south) 
+        %or: (current page.center)
+        {\includegraphics[width=1.8cm]{logo/lyon.jpeg}};
+    \tikz [remember picture,overlay]
+    \node at
+        ([xshift=0cm,yshift=1cm]current page.center) 
+        %or: (current page.center)
+        {\includegraphics[width=12cm]{logo/disp.png}};
+
+   \titlepage
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												End Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
